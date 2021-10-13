@@ -45,13 +45,17 @@ let board, playerTurn, isWinner
 
 	// 2.2) Store the element that displays the game status on the page.
 
-function handleClick(sq) {
-  
+function handleClick(sec) {
+  let sqIdx = parseInt(sec.target.id.replace('sq', ''))
+
+	if (board[sqIdx] || isWinner) {
+		return
+	}
 } 
 
 /*----------------------------- Event Listeners -----------------------------*/
 
-board.addEventListener('click' handleClick)
+board.addEventListener('click', handleClick)
 
 resetGame.addEventListener('click', init)
 
