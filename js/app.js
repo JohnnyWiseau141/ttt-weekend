@@ -46,12 +46,12 @@ let board, playerTurn, isWinner
 	// 2.2) Store the element that displays the game status on the page.
 
 function handleClick(sq) {
-
+  
 } 
 
 /*----------------------------- Event Listeners -----------------------------*/
 
-board.addEventListener()
+board.addEventListener('click' handleClick)
 
 resetGame.addEventListener('click', init)
 
