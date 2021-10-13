@@ -4,6 +4,16 @@
 	// 4.1) Define the 8 possible winning combinations as an array of arrays.
 	  // Each array will contain three indexes of the board that make a winner if they hold the same player value. 
 		// If you are having trouble with this step, feel free to check out the winningCombos array in the solution code. 
+    const winConditions = [
+      [0, 1, 2],
+      [3, 4, 5],
+      [6, 7, 8],
+      [0, 3, 6],
+      [1, 4, 7],
+      [2, 5, 8],
+      [0, 4, 8],
+      [2, 4, 6]
+  ]
 
 
 /*---------------------------- Variables (state) ----------------------------*/
@@ -35,8 +45,15 @@ let board, playerTurn, isWinner
 
 	// 2.2) Store the element that displays the game status on the page.
 
+function handleClick(sq) {
+
+} 
 
 /*----------------------------- Event Listeners -----------------------------*/
+
+board.addEventListener()
+
+resetGame.addEventListener('click', init)
 
 // 5) Next, the app should wait for the user to click a square and call a handleClick function
   // the handleClick function will...
@@ -131,9 +148,17 @@ function render() {
     msgToPlayer.innerText = 'Player 1 go!'
     }else{
     msgToPlayer.innerText = 'Player 2 go!'
+    }
+  } else if (isWinner === "T") {
+    msgToPlayer.innerText = 'Tie game!'
+  } else {
+    if (isWinner === 1){
+      msgToPlayer.innerText = 'Player 1 wins!'
+    } else {
+      msgToPlayer.innerText = 'Player 2 wins!'
+    }
   }
-} 
-	
+}
 	  // 3.2.4) Render those state variables to the page by calling a render function.
 
 	
@@ -145,4 +170,6 @@ function render() {
 	      // Hint (again): Maybe use a ternary inside a template literal here
 
 		// 3.4) After completing this step, you should be able to manually change the values held in the board array in the initialization function and see the style of the corresponding square change on your page.
+
+
 
