@@ -66,6 +66,7 @@ function handleClick(sec) {
 squares.forEach((cell) => {
 		cell.addEventListener('click', handleClick)
 })
+
 resetGame.addEventListener('click', init)
 
 // 5) Next, the app should wait for the user to click a square and call a handleClick function
@@ -130,12 +131,16 @@ init()
 	    // The winner variable will hold the player value (1 or -1) if there's a winner. 
 	    // The winner will hold a 'T' if there's a tie.
 
+			
 function init() {
   msgToPlayer.innerText = "Player 1, pick a square!"
   board = [null, null, null, null, null, null, null, null, null]
   squares.innerHTML = ''
   isWinner = false
   playerTurn = 1
+	squares.forEach((sec) => {
+		sec.innerText = ''
+	})
   render()
 }
 // 3.3) The render function should:
