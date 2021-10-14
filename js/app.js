@@ -85,7 +85,7 @@ function render() {
     }
   })
 
-  if (isWinner === false ) {
+  if (!isWinner ) {
     if (playerTurn === 1) {
     msgToPlayer.innerText = 'Player 1 go!'
     }else{
@@ -107,7 +107,7 @@ function render() {
 
 
 function winnerIsYou() {
-	if(Math.abs(board[0] + board[1] + board[3])=== 3)return board[0]
+	if(Math.abs(board[0] + board[1] + board[2])=== 3)return board[0]
 	if(Math.abs(board[3] + board[4] + board[5])=== 3)return board[3]
 	if(Math.abs(board[6] + board[7] + board[8])=== 3)return board[6]
 	if(Math.abs(board[0] + board[3] + board[6])=== 3)return board[0]
@@ -116,7 +116,7 @@ function winnerIsYou() {
 	if(Math.abs(board[0] + board[4] + board[8])=== 3)return board[0]
 	if(Math.abs(board[2] + board[4] + board[6])=== 3)return board[2]
 	if (board.includes(null)) {
-   return false
+   return null
 } else {
   	return 'T'
 }
