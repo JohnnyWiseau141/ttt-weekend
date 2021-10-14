@@ -51,12 +51,21 @@ function handleClick(sec) {
 	if (board[sqIdx] || isWinner) {
 		return
 	}
+
+	board[sqIdx] = playerTurn
+
+	playerTurn *= -1 
+
+	// isWinner = winnerIsYou()
+
+	render()
 } 
 
 /*----------------------------- Event Listeners -----------------------------*/
 
-board.addEventListener('click', handleClick)
-
+squares.forEach((cell) => {
+		cell.addEventListener('click', handleClick)
+})
 resetGame.addEventListener('click', init)
 
 // 5) Next, the app should wait for the user to click a square and call a handleClick function
