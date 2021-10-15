@@ -60,7 +60,6 @@ init()
 			
 function init() {
 	resetGame.setAttribute('hidden', '')
-  msgToPlayer.innerText = "Player 1, pick a square!"
   board = [null, null, null, null, null, null, null, null, null]
   squares.innerHTML = ''
   isWinner = false
@@ -87,17 +86,17 @@ function render() {
 
   if (!isWinner ) {
     if (playerTurn === 1) {
-    msgToPlayer.innerText = 'Player 1 go!'
+    msgToPlayer.innerText = 'Player X go!'
     }else{
-    msgToPlayer.innerText = 'Player 2 go!'
+    msgToPlayer.innerText = 'Player O go!'
     }
   } else if (isWinner === "T") {
     msgToPlayer.innerText = 'Tie game!'
   } else {
     if (isWinner === 1){
-      msgToPlayer.innerText = 'Player 1 wins!'
+      msgToPlayer.innerText = 'Player X wins!'
     } else {
-      msgToPlayer.innerText = 'Player 2 wins!'
+      msgToPlayer.innerText = 'Player O wins!'
     }
 		
   }
